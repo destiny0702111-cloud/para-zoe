@@ -1,0 +1,283 @@
+/*==========================
+        CIELO
+==========================*/
+
+#sky{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:0;
+
+    background:
+    linear-gradient(
+
+        to bottom,
+
+        #020202 0%,
+
+        #040505 30%,
+
+        #08100d 70%,
+
+        #10231B 100%
+
+    );
+
+}
+
+#stars {
+    position: absolute;
+    inset: 0;
+    
+    /* 👇 Estas dos líneas crean el difuminado perfecto hacia abajo 👇 */
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,2) 0%, rgba(0,0,0,2) 60%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+}
+
+.star{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:0 0 8px rgba(255,255,255,.8);
+
+}
+
+#welcome-screen h1,
+#welcome-screen h2,
+#welcome-screen p,
+#welcome-screen #gift-container{
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+@keyframes starBreathing{
+
+    0%{
+        opacity:0;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+    }
+
+}
+
+@keyframes starBreathingA{
+    0%{ opacity:0; }
+    38%{ opacity:1; }
+    100%{ opacity:0; }
+}
+
+@keyframes starBreathingB{
+    0%{ opacity:0; }
+    62%{ opacity:1; }
+    100%{ opacity:0; }
+}
+
+@keyframes starBreathingC{
+    0%{ opacity:0; }
+    50%{ opacity:1; }
+    100%{ opacity:0; }
+}
+
+/* ===========================
+        PLANETAS
+=========================== */
+#planets-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.planet {
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: inset -8px -8px 20px rgba(0, 0, 0, 0.8), 
+                0 0 25px rgba(255, 255, 255, 0.15);
+}
+
+/* ☀️ Sol */
+.planet-sun {
+    width: 85px;
+    height: 85px;
+    top: 10%;
+    left: 8%;
+    background: radial-gradient(circle at 35% 35%, #fff6d5, #ffcf5c 45%, #ff9d3c 75%, #e0601a 100%);
+    box-shadow: 0 0 60px 18px rgba(255, 176, 60, 0.55),
+                0 0 120px 45px rgba(255, 140, 40, 0.28);
+    opacity: 0.9;
+    animation: sunGlow 6s ease-in-out infinite;
+}
+
+@keyframes sunGlow {
+    0%, 100% { box-shadow: 0 0 60px 18px rgba(255, 176, 60, 0.55), 0 0 120px 45px rgba(255, 140, 40, 0.28); }
+    50% { box-shadow: 0 0 80px 26px rgba(255, 190, 80, 0.75), 0 0 150px 55px rgba(255, 150, 50, 0.35); }
+}
+
+/* 🌍 Tierra */
+.planet-earth {
+    width: 58px;
+    height: 58px;
+    top: 62%;
+    right: 10%;
+    background:
+        radial-gradient(circle at 65% 25%, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0) 20%),
+        radial-gradient(circle at 30% 65%, #3fae5c 0%, transparent 35%),
+        radial-gradient(circle at 65% 55%, #2f8f4e 0%, transparent 30%),
+        radial-gradient(circle at 30% 30%, #4fa6e8, #1c5fa8 60%, #0d2f56 100%);
+    box-shadow: inset -8px -8px 18px rgba(0,0,0,0.6),
+                0 0 35px rgba(90, 160, 230, 0.45);
+    opacity: 0.85;
+    animation: planetSpin 60s linear infinite;
+}
+
+/* 🌙 Luna */
+.planet-moon {
+    width: 26px;
+    height: 26px;
+    top: 55%;
+    right: 21%;
+    background:
+        radial-gradient(circle at 70% 30%, rgba(0,0,0,0.25) 0 3px, transparent 4px),
+        radial-gradient(circle at 35% 60%, rgba(0,0,0,0.2) 0 4px, transparent 5px),
+        radial-gradient(circle at 30% 30%, #e8e6e1, #a9a7a2 65%, #6f6d69 100%);
+    box-shadow: inset -5px -5px 10px rgba(0,0,0,0.55),
+                0 0 18px rgba(220, 220, 210, 0.35);
+    opacity: 0.8;
+}
+
+/* 🪐 Plutón */
+.planet-pluto {
+    width: 16px;
+    height: 16px;
+    top: 22%;
+    right: 20%;
+    background: radial-gradient(circle at 35% 35%, #cbb6a3, #8a7161 70%, #4a3b32 100%);
+    box-shadow: 0 0 10px rgba(200, 175, 150, 0.35);
+    opacity: 0.65;
+}
+
+@keyframes planetSpin {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 0; }
+}
+
+/* ===========================
+      NAVE ALIEN (caricatura)
+=========================== */
+.ufo {
+    position: absolute;
+    top: 68%;
+    left: 14%;
+    width: 130px;
+    z-index: 3;
+    opacity: 0.85;
+    animation: ufoFloat 7s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px rgba(140, 255, 170, 0.35));
+}
+
+.ufo-svg { width: 100%; height: auto; overflow: visible; }
+
+.ufo-body {
+    fill: url(#ufoBodyGradient);
+    fill: #9fb4c7;
+}
+.ufo-body-shade { fill: #5c7186; opacity: 0.55; }
+
+.ufo-dome {
+    fill: #bdf2d8;
+    opacity: 0.9;
+}
+.ufo-dome-shine { fill: rgba(255,255,255,0.7); }
+
+.ufo-light {
+    fill: #ffe98a;
+    animation: ufoLights 1.4s ease-in-out infinite;
+}
+.ufo-light-1 { animation-delay: 0s; }
+.ufo-light-2 { animation-delay: 0.2s; }
+.ufo-light-3 { animation-delay: 0.4s; }
+.ufo-light-4 { animation-delay: 0.6s; }
+.ufo-light-5 { animation-delay: 0.8s; }
+
+.ufo-beam {
+    fill: rgba(180, 255, 210, 0.18);
+    animation: beamPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes ufoFloat {
+    0%, 100% { transform: translate(0, 0) rotate(-2deg); }
+    25% { transform: translate(14px, -10px) rotate(1deg); }
+    50% { transform: translate(-6px, 6px) rotate(-1deg); }
+    75% { transform: translate(-16px, -6px) rotate(2deg); }
+}
+
+@keyframes ufoLights {
+    0%, 100% { opacity: 0.35; }
+    50% { opacity: 1; }
+}
+
+@keyframes beamPulse {
+    0%, 100% { opacity: 0.12; }
+    50% { opacity: 0.28; }
+}
+
+@media (max-width: 640px) {
+    .planet-sun { width: 55px; height: 55px; }
+    .planet-earth { width: 40px; height: 40px; }
+    .planet-moon { width: 18px; height: 18px; }
+    .ufo { width: 90px; top: 66%; left: 10%; }
+}
+
+/* ===========================
+      ESTRELLAS FUGACES
+=========================== */
+#shooting-stars-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.shooting-star {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(255,255,255,1), rgba(255,255,255,0));
+    border-radius: 50%;
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.8));
+    opacity: 0;
+    transform: rotate(-35deg);
+}
+
+@keyframes shoot {
+    0% {
+        transform: translateX(0) translateY(0) rotate(-35deg);
+        opacity: 1;
+        width: 0px;
+    }
+    50% {
+        width: 120px;
+    }
+    100% {
+        transform: translateX(-400px) translateY(400px) rotate(-35deg);
+        opacity: 0;
+        width: 0px;
+    }
+}

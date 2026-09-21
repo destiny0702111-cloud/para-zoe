@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Para ti 🌻</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style/girasoles.css">
+
+</head>
+
+<body>
+
+    <a href="index.html" class="back-link">← volver</a>
+
+    <div class="flower-border left" aria-hidden="true"></div>
+    <div class="flower-border right" aria-hidden="true"></div>
+
+    <!-- 1. Intro -->
+    <section id="intro-screen" class="scene">
+        <div class="intro-content">
+            <p class="intro-eyebrow">Para ti, Zoe</p>
+            <h1>porque hoy no pude mandarte flores…</h1>
+            <button id="openFieldBtn" class="field-btn">🌻 abre tu campo</button>
+        </div>
+    </section>
+
+    <!-- 2. El campo -->
+    <section id="field-screen" class="scene">
+
+        <div id="sun-glow"></div>
+        <div id="pollen-container"></div>
+        <div id="petals-container"></div>
+        <div id="sunflower-field"></div>
+
+        <div class="field-title reveal-target" id="fieldTitle">
+            <p>Así que te hice uno.</p>
+        </div>
+
+        <div class="scroll-hint">
+            <span>Desliza</span>
+        </div>
+
+    </section>
+
+    <!-- 3. El mensaje -->
+    <section id="message-screen" class="scene reveal-section dotted-field">
+
+        <div class="message-card reveal-target">
+
+            <p>Elegí un girasol porque no sé, siempre me ha hecho pensar en ti.</p>
+
+            <p>Supongo que es porque siempre está buscando la luz, incluso
+                cuando el día no está tan bonito. Y de alguna manera siento que
+                tú también has hecho eso conmigo muchas veces. Has conseguido
+                que días que no eran precisamente los mejores terminaran
+                siendo un poquito más bonitos nomás por estar ahí.</p>
+
+            <p>Y pues… como no puedo aparecer de la nada en tu casa con un
+                ramo de flores en las manos JAJAJA, se me ocurrió hacerte las mías.</p>
+
+            <p>Así que no te pude mandar unas flores…</p>
+
+            <p class="message-emph">te hice un campo entero. 🌻</p>
+
+            <p>Porque para ti, una flor me parecía muy poquito.</p>
+
+        </div>
+
+    </section>
+
+    <!-- 4. Recuerdos -->
+    <section id="memories-screen" class="scene reveal-section dotted-field">
+
+        <h2 class="section-heading reveal-target">Toca cada girasol</h2>
+        <p class="memories-counter reveal-target" id="memoriesCounter">0 / 5 encontrados</p>
+
+        <div class="memories-grid">
+
+            <div class="memory-flower reveal-target" role="button" tabindex="0" aria-pressed="false">
+                <div class="memory-card-inner">
+                    <div class="memory-face memory-front">
+                        <span class="memory-icon">🌻</span>
+                        <span class="memory-label">Una madrugada cualquiera</span>
+                    </div>
+                    <div class="memory-face memory-back">
+                        <span class="memory-text">De esas en las que terminamos hablando hasta que tú ya deberías estar durmiendo hace horas.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="memory-flower reveal-target" role="button" tabindex="0" aria-pressed="false">
+                <div class="memory-card-inner">
+                    <div class="memory-face memory-front">
+                        <span class="memory-icon">🌻</span>
+                        <span class="memory-label">Una canción</span>
+                    </div>
+                    <div class="memory-face memory-back">
+                        <span class="memory-text">O bueno, muchas: del Tai, las wawas o el pastor. Y todas esas canciones que terminaron formando parte de nuestras conversaciones.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="memory-flower reveal-target" role="button" tabindex="0" aria-pressed="false">
+                <div class="memory-card-inner">
+                    <div class="memory-face memory-front">
+                        <span class="memory-icon">🌻</span>
+                        <span class="memory-label">Un "te quiero"</span>
+                    </div>
+                    <div class="memory-face memory-back">
+                        <span class="memory-text">Porque hay palabras que, aunque parezcan pequeñas, se quedan.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="memory-flower reveal-target" role="button" tabindex="0" aria-pressed="false">
+                <div class="memory-card-inner">
+                    <div class="memory-face memory-front">
+                        <span class="memory-icon">🌻</span>
+                        <span class="memory-label">Una calabacita</span>
+                    </div>
+                    <div class="memory-face memory-back">
+                        <span class="memory-text">Porque, honestamente, ¿cómo demonios terminé teniendo un apodo así? JAJAJA.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="memory-flower reveal-target" role="button" tabindex="0" aria-pressed="false">
+                <div class="memory-card-inner">
+                    <div class="memory-face memory-front">
+                        <span class="memory-icon">🌻</span>
+                        <span class="memory-label">8,000 km</span>
+                    </div>
+                    <div class="memory-face memory-back">
+                        <span class="memory-text">Y aun así, aquí estamos.</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <p class="memories-hint reveal-target">toca uno para leerlo, tócalo de nuevo para voltearlo</p>
+
+    </section>
+
+    <!-- 5. Gracias -->
+    <section id="gratitude-screen" class="scene reveal-section calm">
+
+        <p class="gratitude-lead reveal-target">Y por si alguna vez lo olvidas…</p>
+
+        <div class="gratitude-lines">
+            <p class="reveal-target">Gracias por las llamadas.</p>
+            <p class="reveal-target">Por las partidas.</p>
+            <p class="reveal-target">Por las madrugadas.</p>
+            <p class="reveal-target">Por las canciones.</p>
+            <p class="reveal-target">Por escucharme incluso cuando ni yo sabía cómo explicar lo que sentía.</p>
+            <p class="reveal-target">Por ser tú.</p>
+            <p class="reveal-target">Y por haber dejado que una persona a miles de kilómetros se sintiera tan cerca.</p>
+        </div>
+
+    </section>
+
+    <!-- 6. Cierre -->
+    <section id="final-screen" class="scene">
+
+        <div class="final-sunflower" id="finalSunflower"></div>
+
+        <div class="final-text reveal-target">
+            <p>No son flores de verdad.</p>
+            <p>Pero vienen con todo mi cariño.</p>
+            <p class="final-title">Feliz día del efecto Floricienta (y el inicio de la primavera). 🌻</p>
+            <p>Te quiero musho, mushote, mushísimo.</p>
+            <p class="final-sign">— Hernandez Nuñez Miguel Salvador</p>
+            <p class="final-pd">PD: algún día te daré las flores de verdad.</p>
+        </div>
+
+    </section>
+
+    <script src="script/girasoles.js"></script>
+
+</body>
+
+</html>
